@@ -1,0 +1,342 @@
+:root {
+  --color-bg: #f6f8fb;
+  --color-primary: #0d47a1;
+  --color-primary-light: rgba(13, 71, 161, 0.75);
+  --color-text: #1f2933;
+  --color-muted: #5f6c7b;
+  --shadow-elevated: 0 20px 40px rgba(15, 23, 42, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.container {
+  width: min(100% - 2rem, 960px);
+  margin: 0 auto;
+}
+
+.page-header,
+.page-footer {
+  padding: 2.5rem 0;
+  background: white;
+  box-shadow: var(--shadow-elevated);
+}
+
+.page-title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 600;
+}
+
+.page-subtitle {
+  margin: 0;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--color-muted);
+}
+
+.slider-section {
+  padding: 3rem 0 2rem;
+}
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  background: #000;
+  color: #fff;
+  box-shadow: var(--shadow-elevated);
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.6s ease;
+  will-change: transform;
+}
+
+.slide {
+  min-height: clamp(280px, 60vw, 420px);
+  position: relative;
+  flex: 1 0 100%;
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  isolation: isolate;
+}
+
+.slide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.75) 100%);
+  z-index: 0;
+}
+
+.slide-content {
+  position: relative;
+  z-index: 1;
+  max-width: clamp(260px, 50%, 400px);
+}
+
+.slide h2 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  font-weight: 600;
+}
+
+.slide p {
+  margin: 0;
+  font-size: clamp(1rem, 2.4vw, 1.15rem);
+  line-height: 1.5;
+}
+
+.slide--baikal {
+  background-image: url('https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=1600&q=80');
+}
+
+.slide--karelia {
+  background-image: url('https://images.unsplash.com/photo-1584999734482-0361aecad844?auto=format&fit=crop&w=1600&q=80');
+}
+
+.slide--altay {
+  background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80');
+}
+
+.slider-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #fff;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.slider-control:hover,
+.slider-control:focus {
+  background: rgba(255, 255, 255, 0.35);
+  outline: none;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.slider-prev {
+  left: 1.25rem;
+}
+
+.slider-next {
+  right: 1.25rem;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.75rem;
+}
+
+.slider-dots button {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.slider-dots button.is-active {
+  background: #fff;
+  transform: scale(1.2);
+}
+
+.info-section {
+  padding: 2rem 0 4rem;
+}
+
+.info-section h2 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin-bottom: 1.5rem;
+}
+
+.info-list {
+  display: grid;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.info-list li {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.75rem;
+  box-shadow: var(--shadow-elevated);
+}
+
+.info-list h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.info-list p {
+  margin: 0;
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+.contact-section {
+  padding: 3rem 0;
+}
+
+.contact-grid {
+  display: grid;
+  gap: 2rem;
+  background: white;
+  padding: clamp(1.5rem, 5vw, 2.5rem);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow-elevated);
+}
+
+.contact-details h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+}
+
+.contact-details p {
+  margin: 0 0 1.5rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+.contact-methods {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.contact-methods li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.contact-label {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.contact-methods a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.contact-methods a:hover,
+.contact-methods a:focus {
+  text-decoration: underline;
+}
+
+.contact-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-group {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  font-family: inherit;
+  font-size: 1rem;
+  background: #f9fafc;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(13, 71, 161, 0.2);
+}
+
+.contact-submit {
+  justify-self: start;
+  padding: 0.85rem 1.75rem;
+  background: var(--color-primary);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact-submit:hover,
+.contact-submit:focus {
+  background: var(--color-primary-light);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  .slider-control {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .info-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .contact-grid {
+    grid-template-columns: 1.1fr 1fr;
+    align-items: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slider-track {
+    transition: none;
+  }
+
+  .slider-control {
+    transition: none;
+  }
+
+  .slider-dots button {
+    transition: none;
+  }
+}

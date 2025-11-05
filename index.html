@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Адаптивный слайдер на jQuery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="page-header">
+    <div class="container">
+      <h1 class="page-title">Путешествуйте по России вместе с нами</h1>
+      <p class="page-subtitle">Адаптивный слайдер расскажет о самых красивых направлениях нашей страны.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="slider-section">
+      <div class="container">
+        <div class="slider" id="travel-slider">
+          <div class="slider-track">
+            <article class="slide slide--baikal">
+              <div class="slide-content">
+                <h2>Байкал</h2>
+                <p>Самое глубокое озеро на планете, окружённое величественными горами и чистейшим воздухом.</p>
+              </div>
+            </article>
+            <article class="slide slide--karelia">
+              <div class="slide-content">
+                <h2>Карелия</h2>
+                <p>Лесные просторы, озёра и водопады — идеальное место для перезагрузки и отдыха.</p>
+              </div>
+            </article>
+            <article class="slide slide--altay">
+              <div class="slide-content">
+                <h2>Алтай</h2>
+                <p>Горные долины, кристальные реки и неизведанные маршруты для настоящих искателей приключений.</p>
+              </div>
+            </article>
+          </div>
+          <button class="slider-control slider-prev" type="button" aria-label="Предыдущий слайд">&#10094;</button>
+          <button class="slider-control slider-next" type="button" aria-label="Следующий слайд">&#10095;</button>
+          <div class="slider-dots" aria-label="Позиция слайдера"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <div class="container">
+        <h2>Почему стоит выбрать нас</h2>
+        <ul class="info-list">
+          <li>
+            <h3>Локальные эксперты</h3>
+            <p>Мы создаём маршруты вместе с жителями регионов, чтобы показать вам настоящую Россию.</p>
+          </li>
+          <li>
+            <h3>Комфорт в пути</h3>
+            <p>Подбираем лучшие варианты размещения и транспорта, учитывая ваши пожелания.</p>
+          </li>
+          <li>
+            <h3>Гибкие программы</h3>
+            <p>Слайды адаптируются под ширину экрана, а наши маршруты — под ваши интересы.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-details">
+            <h2>Свяжитесь с нами</h2>
+            <p>Оставьте заявку или напишите нам напрямую — мы подберём путешествие вашей мечты и ответим на все вопросы.</p>
+            <ul class="contact-methods">
+              <li>
+                <span class="contact-label">Телефон:</span>
+                <a href="tel:+78001234567">8 (800) 123-45-67</a>
+              </li>
+              <li>
+                <span class="contact-label">Email:</span>
+                <a href="mailto:hello@openrussia.ru">hello@openrussia.ru</a>
+              </li>
+              <li>
+                <span class="contact-label">Адрес офиса:</span>
+                <span>Москва, ул. Путешественников, 10</span>
+              </li>
+            </ul>
+          </div>
+          <form class="contact-form" action="#" method="post">
+            <div class="form-group">
+              <label for="name">Имя</label>
+              <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Электронная почта</label>
+              <input type="email" id="email" name="email" placeholder="example@mail.ru" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Сообщение</label>
+              <textarea id="message" name="message" rows="4" placeholder="Расскажите о своём путешествии" required></textarea>
+            </div>
+            <button type="submit" class="contact-submit">Отправить заявку</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <p>&copy; 2024 «Открывай Россию». Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="js/slider.js"></script>
+  <script>
+    $(function () {
+      $('#travel-slider').simpleSlider({
+        autoplay: true,
+        interval: 5000
+      });
+    });
+  </script>
+</body>
+</html>
