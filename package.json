@@ -1,0 +1,22 @@
+{
+  "name": "adaptive-slider-site",
+  "version": "1.0.0",
+  "description": "Одностраничный сайт с адаптивным слайдером на jQuery и unit-тестами",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "slider",
+    "jquery",
+    "responsive",
+    "jest"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jquery": "^3.7.1",
+    "jsdom": "^22.1.0"
+  }
+}
